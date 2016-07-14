@@ -1,0 +1,12 @@
+#!/bin/sh
+
+WALLDIR=$HOME/data/img/wallp/
+
+setwall() {
+	WALL=$(readlink -f $1)
+	hsetroot -fill $WALL -blur 8 -write $HOME/.blur.png
+	ln -sf $WALL ~/.wall.png
+}
+test -n "$1" && setwall $1 && exit
+
+

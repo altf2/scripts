@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cd $HOME/dump
+OUT="$(thinglaunch -o)"
+
+curl -s "$@" > $OUT
+
+# test -z "$OUT"  && curl -sLO "$@" || curl -s "$@" > $OUT
+
+

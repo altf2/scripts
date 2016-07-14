@@ -1,0 +1,8 @@
+#!/bin/sh
+
+/usr/sbin/pkg info > $HOME/data/backup/pkgs.txt
+/usr/local/bin/sudo /usr/bin/tar -jcvf $HOME/data/backup/panda_etc.tar.bz2 /etc
+/usr/local/bin/sudo /usr/bin/tar -jcvf $HOME/data/backup/panda_usrlocaletc.tar.bz2 /usr/local/etc
+
+/usr/bin/tar -jcvf $HOME/data/backup/panda_opera_ext.tar.bz2 /usr/home/altf2/.opera/widgets
+
