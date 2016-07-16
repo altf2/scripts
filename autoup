@@ -1,0 +1,14 @@
+#!/bin/sh
+
+SSHUSER=altf2
+SSHKEY=$HOME/.ssh/id_rsa
+SERVER=bread.0x7b4.org
+WEBROOT=/usr/local/www/pub.0x7b4.org
+WEBDIR=rnd
+
+test -z "$1" && exit 1 || FILENAME=$(basename $1)
+scp -i "$SSHKEY" "$1" "${SSHUSER}@${SERVER}:${WEBROOT}/${WEBDIR}/$FILENAME"
+echo "http://$SERVER/$WEBDIR/$FILENAME" | xsel 
+rm $1
+
+# vim: set ft=sh
